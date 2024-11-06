@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<a href="/category/add">Add</a>
+<table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="item : ${list}">
+<td th:text="${item.id}"></td>
+<td th:text="${item.name}"></td>
+<td>
+<a th:href="@{/category/edit/{id}(id=${item.id})}">Edit</a>
+<a th:href="@{/category/delete/{id}(id=${item.id})}">Delete</a>
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
